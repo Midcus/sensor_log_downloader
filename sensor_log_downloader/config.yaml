@@ -1,0 +1,22 @@
+name: "Sensor Log Downloader"
+version: "0.1.0"
+slug: "sensor_log_downloader"
+description: "Download Home Assistant database (home-assistant_v2.db) via Ingress (no backup, no copy, no zip)."
+arch:
+  - aarch64
+  - amd64
+
+startup: "application"
+boot: "auto"
+
+ports:
+  5000/tcp: null
+
+map:
+  - config:ro
+
+ingress: true
+panel_icon: "mdi:database-arrow-down"
+panel_title: "Sensor Log Downloader"
+ingress_timeout: 60
+ingress_port: 5000
